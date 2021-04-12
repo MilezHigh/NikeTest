@@ -88,6 +88,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9AA0755526240D80006419FF /* TopAlbumsMVVM */ = {
+			isa = PBXGroup;
+			children = (
+				9AE29E9F25F47974008D6E4E /* TopAlbumsViewController.swift */,
+				9AE29ED125F4829A008D6E4E /* TopAlbumsViewModel.swift */,
+				9AA0755926240D8E006419FF /* TableCell */,
+			);
+			path = TopAlbumsMVVM;
+			sourceTree = "<group>";
+		};
+		9AA0755926240D8E006419FF /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				9AE29EE825F5EE20008D6E4E /* AlbumTableViewCell.swift */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
+		9AA0755D26240DB3006419FF /* TopAlbumDetailMVVM */ = {
+			isa = PBXGroup;
+			children = (
+				9AE29EF325F71855008D6E4E /* TopAlbumDetailViewController.swift */,
+				9AE29EF825F718DD008D6E4E /* TopAlbumDetailViewModel.swift */,
+			);
+			path = TopAlbumDetailMVVM;
+			sourceTree = "<group>";
+		};
 		9AE29E8F25F47974008D6E4E = {
 			isa = PBXGroup;
 			children = (
@@ -113,12 +140,9 @@
 			children = (
 				9AE29E9B25F47974008D6E4E /* AppDelegate.swift */,
 				9AE29E9D25F47974008D6E4E /* SceneDelegate.swift */,
-				9AE29E9F25F47974008D6E4E /* TopAlbumsViewController.swift */,
-				9AE29ED125F4829A008D6E4E /* TopAlbumsViewModel.swift */,
-				9AE29EE825F5EE20008D6E4E /* AlbumTableViewCell.swift */,
-				9AE29EF325F71855008D6E4E /* TopAlbumDetailViewController.swift */,
-				9AE29EF825F718DD008D6E4E /* TopAlbumDetailViewModel.swift */,
 				9AE29ED925F4BAE5008D6E4E /* API.swift */,
+				9AA0755526240D80006419FF /* TopAlbumsMVVM */,
+				9AA0755D26240DB3006419FF /* TopAlbumDetailMVVM */,
 				9AE29EA125F47974008D6E4E /* Main.storyboard */,
 				9AE29EA425F47975008D6E4E /* Assets.xcassets */,
 				9AE29EA625F47975008D6E4E /* LaunchScreen.storyboard */,
