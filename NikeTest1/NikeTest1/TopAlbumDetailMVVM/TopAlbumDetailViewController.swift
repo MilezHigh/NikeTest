@@ -150,8 +150,16 @@ class TopAlbumDetailViewController: UIViewController {
     }
     
     @objc private func buttonPressed() {
+        guard let viewModel = viewModel else { return }
+        
+        #if targetEnvironment(simulator)
+        if let url = URL(string: viewModel.album.url) {
+            UIApplication.shared.open(url)
+        }
+        #else
         let mp = MPMusicPlayerApplicationController.systemMusicPlayer
-        let descriptor = MPMusicPlayerStoreQueueDescriptor(storeIDs: [viewModel?.album.id ?? ""])
+        let descriptor = MPMusicPlayerStoreQueueDescriptor(storeIDs: [viewModel.album.id])
         mp.openToPlay(descriptor)
+        #endif
     }
 }
