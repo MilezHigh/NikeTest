@@ -53,10 +53,11 @@ class TopAlbumDetailViewController: UIViewController {
     }
     
     func setupController() {
+        guard let viewModel = viewModel else { return }
+        title = viewModel.album.artistName
         view.backgroundColor = .white
-        title = viewModel?.album.artistName
         
-        API.instance.fetchImageData(from: viewModel?.album.artworkUrl100 ?? "") { [weak self] (result) in
+        viewModel.fetchCachedImage(for: viewModel.album.artworkUrl100) { [weak self] (result) in
             guard let self = self else { return }
             
             var image: UIImage?
@@ -98,7 +99,7 @@ class TopAlbumDetailViewController: UIViewController {
             .map({ label -> UILabel in
                 label.numberOfLines = 0
                 label.textColor = .black
-                label.font = UIFont.systemFont(ofSize: 12)
+                label.font = UIFont.systemFont(ofSize: 14)
                 return label
             })
         let stackView = UIStackView(arrangedSubviews: labels)

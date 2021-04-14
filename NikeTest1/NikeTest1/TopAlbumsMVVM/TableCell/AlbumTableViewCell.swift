@@ -21,6 +21,8 @@ class AlbumTableViewCell: UITableViewCell {
         }
     }
     
+    private let api: UtilityAPI = API.instance
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -34,7 +36,7 @@ class AlbumTableViewCell: UITableViewCell {
         accessoryView = albumImageView
         accessoryView?.startSpinner()
         
-        API.instance.fetchImageData(from: urlString) { [weak self] (result) in
+        api.fetchImageData(from: urlString) { [weak self] (result) in
             guard let self = self else { return }
             self.accessoryView?.endSpinner()
             

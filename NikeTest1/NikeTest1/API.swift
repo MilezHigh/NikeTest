@@ -21,8 +21,16 @@ enum APIError: Error {
     }
 }
 
+// MARK: - API Protocols
+protocol AppleRSSFeedAPI {
+    func appleTopAlbumsFeed(limit: Int, _ completion: @escaping (Result<[AlbumObjectModel], APIError>) -> Void)
+}
+
+protocol UtilityAPI {
+    func fetchImageData(from urlString: String, _ completion: @escaping (Result<Data?, APIError>) -> Void)
+}
+
 class API {
-    
     let cache = NSCache<NSString, NSData>()
     
     static let instance: API = API()
@@ -65,9 +73,9 @@ class API {
     }
 }
 
-extension API {
-    
-    func fetchRSSFeed(limit: Int = 100, _ completion: @escaping (Result<[AlbumObjectModel], APIError>) -> Void) {
+// MARK: - AppleRSSFeed
+extension API: AppleRSSFeedAPI {
+    func appleTopAlbumsFeed(limit: Int = 100, _ completion: @escaping (Result<[AlbumObjectModel], APIError>) -> Void) {
         let urlString = "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/\(limit)/explicit.json"
         request(responseType: RSSParentResponseModel.self, urlString: urlString) { (result) in
             DispatchQueue.main.async {
@@ -81,8 +89,11 @@ extension API {
             }
         }
     }
-    
-    func fetchImageData(from urlString: String, shouldCache: Bool = true, _ completion: @escaping (Result<Data?, APIError>) -> Void) {
+}
+
+// MARK: - Utility
+extension API: UtilityAPI {
+    func fetchImageData(from urlString: String, _ completion: @escaping (Result<Data?, APIError>) -> Void) {
         DispatchQueue.global().async { [weak self] in
             guard let self = self else { return }
             

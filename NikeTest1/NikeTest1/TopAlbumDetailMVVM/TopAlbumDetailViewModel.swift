@@ -11,8 +11,8 @@ class TopAlbumDetailViewModel {
     var album: AlbumObjectModel
     var headerImageData: Data?
     
-    let api = API.instance
-    
+    private let api: UtilityAPI = API.instance
+
     init(album: AlbumObjectModel, headerImageData: Data?) {
         self.album = album
         self.headerImageData = headerImageData
@@ -21,9 +21,9 @@ class TopAlbumDetailViewModel {
 
 extension TopAlbumDetailViewModel {
     
-    func fetchCachedImage() {
-        API.instance.fetchImageData(from: "") { (result) in
-            <#code#>
+    func fetchCachedImage(for urlString: String, _ completion: @escaping (Result<Data?, APIError>) -> Void) {
+        API.instance.fetchImageData(from: urlString) { (result) in
+            completion(result)
         }
     }
 }

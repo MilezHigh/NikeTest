@@ -11,12 +11,14 @@ class TopAlbumsViewModel {
     
     private var rssFeedLimit: Int = 0
     
+    private let api: AppleRSSFeedAPI = API.instance
+    
     init(rssFeedLimit: Int) {
         self.rssFeedLimit = rssFeedLimit
     }
     
     func fetchRSSFeed(_ completion: @escaping (Result<[AlbumObjectModel], APIError>) -> Void) {
-        API.instance.fetchRSSFeed(limit: rssFeedLimit) { (result) in
+        api.appleTopAlbumsFeed(limit: rssFeedLimit) { (result) in
             completion(result)
         }
     }
