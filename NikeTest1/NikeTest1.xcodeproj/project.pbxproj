@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9AA075622626D1C5006419FF /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA075612626D1C5006419FF /* Models.swift */; };
 		9AC893D8260067970040FA80 /* MockJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9AC893D7260067970040FA80 /* MockJSON.txt */; };
 		9AE29E9C25F47974008D6E4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE29E9B25F47974008D6E4E /* AppDelegate.swift */; };
 		9AE29E9E25F47974008D6E4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE29E9D25F47974008D6E4E /* SceneDelegate.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9AA075612626D1C5006419FF /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		9AC893D7260067970040FA80 /* MockJSON.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = MockJSON.txt; sourceTree = "<group>"; };
 		9AE29E9825F47974008D6E4E /* NikeTest1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NikeTest1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE29E9B25F47974008D6E4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				9AE29E9B25F47974008D6E4E /* AppDelegate.swift */,
 				9AE29E9D25F47974008D6E4E /* SceneDelegate.swift */,
 				9AE29ED925F4BAE5008D6E4E /* API.swift */,
+				9AA075612626D1C5006419FF /* Models.swift */,
 				9AA0755526240D80006419FF /* TopAlbumsMVVM */,
 				9AA0755D26240DB3006419FF /* TopAlbumDetailMVVM */,
 				9AE29EA125F47974008D6E4E /* Main.storyboard */,
@@ -307,6 +310,7 @@
 				9AE29EF925F718DD008D6E4E /* TopAlbumDetailViewModel.swift in Sources */,
 				9AE29ED225F4829A008D6E4E /* TopAlbumsViewModel.swift in Sources */,
 				9AE29E9E25F47974008D6E4E /* SceneDelegate.swift in Sources */,
+				9AA075622626D1C5006419FF /* Models.swift in Sources */,
 				9AE29EDA25F4BAE5008D6E4E /* API.swift in Sources */,
 				9AE29EE925F5EE20008D6E4E /* AlbumTableViewCell.swift in Sources */,
 			);

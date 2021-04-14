@@ -8,13 +8,22 @@
 import Foundation
 
 class TopAlbumDetailViewModel {
-    
-     var album: RSSFeedObjectModel
-    
+    var album: AlbumObjectModel
     var headerImageData: Data?
-
-    init(album: RSSFeedObjectModel, headerImageData: Data?) {
+    
+    let api = API.instance
+    
+    init(album: AlbumObjectModel, headerImageData: Data?) {
         self.album = album
         self.headerImageData = headerImageData
+    }
+}
+
+extension TopAlbumDetailViewModel {
+    
+    func fetchCachedImage() {
+        API.instance.fetchImageData(from: "") { (result) in
+            <#code#>
+        }
     }
 }

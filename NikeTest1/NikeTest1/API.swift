@@ -67,7 +67,7 @@ class API {
 
 extension API {
     
-    func fetchRSSFeed(limit: Int = 100, _ completion: @escaping (Result<[RSSFeedObjectModel], APIError>) -> Void) {
+    func fetchRSSFeed(limit: Int = 100, _ completion: @escaping (Result<[AlbumObjectModel], APIError>) -> Void) {
         let urlString = "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/\(limit)/explicit.json"
         request(responseType: RSSParentResponseModel.self, urlString: urlString) { (result) in
             DispatchQueue.main.async {
@@ -116,30 +116,3 @@ extension API {
         }
     }
 }
-
-struct MusicGenre: Decodable {
-    var genreId: String
-    var name: String
-}
-
-struct RSSFeedObjectModel: Decodable {
-    var artistName: String
-    var id: String
-    var releaseDate: String
-    var name: String
-    var copyright: String
-    var artworkUrl100: String
-    var genres: [MusicGenre]
-    var url: String
-}
-
-struct RSSChildResponseModel: Decodable {
-    var title: String
-    var id: String
-    var results: [RSSFeedObjectModel]
-}
-
-struct RSSParentResponseModel: Decodable {
-    var feed: RSSChildResponseModel
-}
-

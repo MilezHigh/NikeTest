@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  NikeTest1
 //
-//  Created by Miles Fishman on 3/6/21.
+//  Created by Miles Fishman on 4/14/21.
 //
 
 import UIKit
@@ -10,7 +10,7 @@ import UIKit
 class TopAlbumsViewController: UIViewController {
     
     private var tableView: UITableView?
-    private var feedResults: [RSSFeedObjectModel] = []
+    private var feedResults: [AlbumObjectModel] = []
     
     var viewModel: TopAlbumsViewModel?
     

@@ -12,7 +12,7 @@ class AlbumTableViewCell: UITableViewCell {
     
     var albumImageView: UIImageView = UIImageView()
     
-    var model: RSSFeedObjectModel? = nil {
+    var model: AlbumObjectModel? = nil {
         didSet {
             guard let model = model else { return }
             textLabel?.text = model.name
