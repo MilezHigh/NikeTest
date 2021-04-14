@@ -26,7 +26,7 @@ class NikeTest1Tests: XCTestCase {
     // Feature Specific Testing
     func testRSSFeedValidAPIResponse() {
         let promise = expectation(description: "Valid Response")
-        api.fetchRSSFeed() { (result) in
+        api.appleTopAlbumsFeed() { (result) in
             switch result {
             case .success(let results):
                 XCTAssertGreaterThanOrEqual(results.count, 0)

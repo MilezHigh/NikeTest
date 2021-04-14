@@ -22,7 +22,7 @@ class TopAlbumDetailViewModel {
 extension TopAlbumDetailViewModel {
     
     func fetchCachedImage(for urlString: String, _ completion: @escaping (Result<Data?, APIError>) -> Void) {
-        API.instance.fetchImageData(from: urlString) { (result) in
+        api.fetchImageData(from: urlString) { (result) in
             completion(result)
         }
     }
